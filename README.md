@@ -27,7 +27,7 @@ Python fundamentals (variables, input/output, data types)
 
 | # | Project | Key Skills | Status |
 |---|---|---|---|
-| 1 | [Unit Converter](#) | Variables, functions, input/output | ✅ Complete |
+| 1 | [Unit Converter](test.ipynb) | Variables, functions, input/output | ✅ Complete |
 | 2 | [Number Guessing Game](#) | Loops, conditionals, random | ✅ Complete |
 | 3 | [To-Do List](#) | Lists, functions, data structures | ✅ Complete |
 | 4 | [Student Grade Calculator](#) | Dictionaries, validation, error handling | ✅ Complete |
