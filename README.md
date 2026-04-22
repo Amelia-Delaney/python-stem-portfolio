@@ -5,7 +5,7 @@
 
 ## About Me
 
-I plan on studying engineering at university in 2027. I am currently studying Alevel physics, maths, further maths, and economics and plan on acheiving 3 A* and an A in further maths at the end of year 13. 
+I plan on studying engineering at university in 2027. I am currently studying Alevel physics, maths, further maths, and economics and plan on acheiving 3 A* and an A in further maths at the end of year 13.
 
 
 
@@ -54,3 +54,11 @@ Python fundamentals (variables, input/output, data types)
 - **Email:** [26delana@bscmail.org]
 
 
+```Python
+def show_menu():
+    print("=== Unit Converter ===")
+    print("1. Kilometres to Miles")
+    print("2. Miles to Kilometres")
+    print("3. Celsius to Fahrenheit")
+    print("4. Fahrenheit to Celsius")
+```
