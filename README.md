@@ -3,13 +3,13 @@
 **Course:** python for STEM
 **Year:** Year 12, 2026-2027
 
-##About Me
+## About Me
 
 I plan on studying engineering at university in 2027. I am currently studying Alevel physics, maths, further maths, and economics and plan on acheiving 3 A* and an A in further maths at the end of year 13. 
 
 
 
-#course overview
+# course overview
 
 This portfolio documents my progress through a Python programming course designed for students preparing for STEM pathways at university. The course covers:
 
