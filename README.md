@@ -27,7 +27,7 @@ Python fundamentals (variables, input/output, data types)
 
 | # | Project | Key Skills | Status |
 |---|---|---|---|
-| 1 | [Unit Converter](test.ipynb) | Variables, functions, input/output | ✅ Complete |
+| 1 | [Unit Converter](converter.ipynb) | Variables, functions, input/output | ✅ Complete |
 | 2 | [Number Guessing Game](#) | Loops, conditionals, random | ✅ Complete |
 | 3 | [To-Do List](#) | Lists, functions, data structures | ✅ Complete |
 | 4 | [Student Grade Calculator](#) | Dictionaries, validation, error handling | ✅ Complete |
@@ -53,12 +53,3 @@ Python fundamentals (variables, input/output, data types)
 - **GitHub:** [Amelia Delaney]
 - **Email:** [26delana@bscmail.org]
 
-
-```Python
-def show_menu():
-    print("=== Unit Converter ===")
-    print("1. Kilometres to Miles")
-    print("2. Miles to Kilometres")
-    print("3. Celsius to Fahrenheit")
-    print("4. Fahrenheit to Celsius")
-```
