@@ -55,6 +55,8 @@ Python fundamentals (variables, input/output, data types)
 
 # Projects
 
+# Project 1
+
 ## Unit Converter
 
 **Description**
@@ -116,6 +118,8 @@ def main():
         print(f"{fahrenheit} fahrenheit = {result:.2f} celsius")
 
 main()```
+
+# Project 2
 
 ## Number Guessing Game
 
@@ -209,6 +213,8 @@ def main():
 
 main()```
 
+#Project 3
+
 ## To Do List
 
 **Description**
@@ -290,7 +296,7 @@ def main():
 
 main()```
 
-
+#Project 4
 
 ## Student Grade Calculator
 
