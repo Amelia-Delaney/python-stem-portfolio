@@ -28,7 +28,7 @@ Python fundamentals (variables, input/output, data types)
 | # | Project | Key Skills | Status |
 |---|---|---|---|
 | 1 | [Unit Converter](#unit-converter) | Variables, functions, input/output | ✅ Complete |
-| 2 | [Number Guessing Game](#) | Loops, conditionals, random | ✅ Complete |
+| 2 | [Number Guessing Game](#number-guessing-game) | Loops, conditionals, random | ✅ Complete |
 | 3 | [To-Do List](#) | Lists, functions, data structures | ✅ Complete |
 | 4 | [Student Grade Calculator](#) | Dictionaries, validation, error handling | ✅ Complete |
 | 5 | [OOP Bank Account](#) | Classes, OOP principles | ✅ Complete |
@@ -115,4 +115,97 @@ def main():
         result = fahrenheit_to_celsius(fahrenheit)
         print(f"{fahrenheit} fahrenheit = {result:.2f} celsius")
 
-main()'''
+main()```
+
+## Number Guessing Game
+
+**Description**
+
+This code enables the user to choose the desired game difficulty level from a menu with the options of guessing a number between 1-50, 1-100 and 1-500. The user is then asked to input a number they think the computer has chosen. The code then prints whether the users number is higher or lower than the chosen number and the user has to keep playing until they guess the correct number. Once the level is completed, the user is asked whether they want to play again.
+
+**Code**
+
+```python
+def show_menu():
+    print("=== Number Guessing Game ===")
+    print("1. Easy 1-50")
+    print("2. Medium 1-100")
+    print("3. Hard 1-500")
+
+def main():
+    show_menu()
+    choice = input("Enter your choice (1-3): ")
+
+    if choice == "1":
+        import random
+        secret = random.randint(1, 50)
+        attempts = 0
+            
+        print("I'm thinking of a number between 1 and 50.")
+            
+        while True:
+            guess = int(input("Your guess: "))
+            attempts += 1
+            
+            if guess < secret:
+                print("Too low! Try again.")
+            elif guess > secret:
+                print("Too high! Try again.")
+            else:
+                print(f"Correct! You got it in {attempts} attempts.")
+                response = (input("do you want to play again:"))
+                if response.lower() == 'yes':
+                    continue
+                elif response.lower() == 'no':
+                    break  # Exit the loop
+            
+    if choice == "2":
+        import random
+        secret = random.randint(1, 100)
+        attempts = 0
+        
+        print("I'm thinking of a number between 1 and 100.")
+        
+        while True:
+            guess = int(input("Your guess: "))
+            attempts += 1
+            
+            if guess < secret:
+                print("Too low! Try again.")
+            elif guess > secret:
+                print("Too high! Try again.")
+            else:
+                print(f"Correct! You got it in {attempts} attempts.")
+                response = (input("do you want to play again:"))
+                if response.lower() == 'yes':
+                    continue
+                elif response.lower() == 'no':
+                    break  # Exit the loop
+            
+    if choice == "3":
+        import random
+
+           
+        secret = random.randint(1, 500)
+        attempts = 0
+        
+        print("I'm thinking of a number between 1 and 500.")
+        
+        while True:
+            guess = int(input("Your guess: "))
+            attempts += 1
+            
+            if guess < secret:
+                print("Too low! Try again.")
+            elif guess > secret:
+                print("Too high! Try again.")
+            else:
+                print(f"Correct! You got it in {attempts} attempts.")
+                response = (input("do you want to play again:"))
+                if response.lower() == 'yes':
+                    continue
+                elif response.lower() == 'no':
+                    break  # Exit the loop
+
+main()```
+
