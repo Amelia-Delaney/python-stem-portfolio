@@ -59,7 +59,7 @@ Python fundamentals (variables, input/output, data types)
 
 **Description**
 
-waffle about code
+This code enables the user to choose a converter from the menu. By inputing the designated number e.g. 1, they are able to convert between Kilometers and Miles by inputing the number of Kilometers they want to convert. The code will then print the correspoding number of miles.
 
 **Code**
 
