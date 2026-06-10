@@ -29,7 +29,7 @@ Python fundamentals (variables, input/output, data types)
 |---|---|---|---|
 | 1 | [Unit Converter](#unit-converter) | Variables, functions, input/output | ✅ Complete |
 | 2 | [Number Guessing Game](#number-guessing-game) | Loops, conditionals, random | ✅ Complete |
-| 3 | [To-Do List](#) | Lists, functions, data structures | ✅ Complete |
+| 3 | [To-Do List](#to-do-list) | Lists, functions, data structures | ✅ Complete |
 | 4 | [Student Grade Calculator](#student-grade-calculator) | Dictionaries, validation, error handling | ✅ Complete |
 | 5 | [OOP Bank Account](#) | Classes, OOP principles | ✅ Complete |
 | 6 | [Data Analysis Notebook](#) | Jupyter Notebooks, data exploration | ✅ Complete |
@@ -209,6 +209,89 @@ def main():
 
 main()```
 
+## To Do List
+
+**Description**
+
+This code enables the user access a To Do List menu. The user is able to 1 View tasks, 2 Add tasks, 3 Mark a task as done, 4 remove a task or 5 Quit. By inputing the corresponding number the user is able to carry out the specific function. When entereing 1 and viewing tasks, the user can see their tasks in a neat table with the first task they entered labelled 1, and the last task they entered labelled the number of tasks in the table.
+
+**Code**
+
+```python
+def show_tasks(tasks):
+    """Display all tasks with their numbers and done status."""
+    if len(tasks) == 0:
+        print("No tasks yet!")
+        return
+    
+    print("\n=== Your Tasks ===")
+    for i, task in enumerate(tasks, start=1):
+        status = "✓" if task["done"] else " "
+        print(f"{i}. [{status}] {task['name']}")
+    print()
+
+
+def add_task(tasks):
+    """Add a new task to the list."""
+    new_task = input("Enter task: ")
+    tasks.append({"name": new_task, "done": False})
+    print(f"Added: '{new_task}'")
+
+
+def mark_done(tasks):
+    """Mark a task as done."""
+    show_tasks(tasks)
+    number = int(input("Enter task number to mark as done: "))
+    
+    if 1 <= number <= len(tasks):
+        tasks[number - 1]["done"] = True
+        print(f"Marked as done: '{tasks[number - 1]['name']}'")
+    else:
+        print("Invalid number.")
+
+
+def remove_task(tasks):
+    """Remove a task by number."""
+    show_tasks(tasks)
+    number = int(input("Enter task number to remove: "))
+    
+    if 1 <= number <= len(tasks):
+        removed = tasks.pop(number - 1)
+        print(f"Removed: '{removed['name']}'")
+    else:
+        print("Invalid number.")
+
+
+def main():
+    tasks = []
+    
+    while True:
+        print("=== To-Do List ===")
+        print("1. View tasks")
+        print("2. Add task")
+        print("3. Mark task as done")
+        print("4. Remove task")
+        print("5. Quit")
+        
+        choice = input("Choose: ")
+        
+        if choice == "1":
+            show_tasks(tasks)
+        elif choice == "2":
+            add_task(tasks)
+        elif choice == "3":
+            mark_done(tasks)
+        elif choice == "4":
+            remove_task(tasks)
+        elif choice == "5":
+            print("Goodbye!")
+            break
+
+
+main()```
+
+
+
 ## Student Grade Calculator
 
 **Description**
@@ -267,5 +350,5 @@ while True:
     if calculate_resultsagain == "yes":
         continue
     else: break
-calculate_results```
+calculate_results()```
 
