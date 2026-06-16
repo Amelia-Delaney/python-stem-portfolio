@@ -32,7 +32,7 @@ Python fundamentals (variables, input/output, data types)
 | 3 | [To-Do List](#to-do-list) | Lists, functions, data structures | ✅ Complete |
 | 4 | [Student Grade Calculator](#student-grade-calculator) | Dictionaries, validation, error handling | ✅ Complete |
 | 5 | [OOP Bank Account](#) | Classes, OOP principles | ✅ Complete |
-| 6 | [Data Analysis Notebook](#) | Jupyter Notebooks, data exploration | ✅ Complete |
+| 6 | [Contact Book with File Saving](#contact-book-with-file-saving) | File handling, reading/writing text files, functions, | ✅ Complete |
 
 ## Skills I Have Developed
 
@@ -117,7 +117,8 @@ def main():
         result = fahrenheit_to_celsius(fahrenheit)
         print(f"{fahrenheit} fahrenheit = {result:.2f} celsius")
 
-main()```
+main()
+```
 
 # Project 2
 
@@ -211,7 +212,8 @@ def main():
                 elif response.lower() == 'no':
                     break  # Exit the loop
 
-main()```
+main()
+```
 
 #Project 3
 
@@ -294,7 +296,8 @@ def main():
             break
 
 
-main()```
+main()
+```
 
 #Project 4
 
@@ -356,5 +359,181 @@ while True:
     if calculate_resultsagain == "yes":
         continue
     else: break
-calculate_results()```
+calculate_results()
+```
 
+#Project 5
+
+## OOP Bank Account
+
+**Description**
+
+This code asks the user to inp
+
+**Code**
+'''python
+      """A simple bank account class."""
+
+    def __init__(self, owner, initial_balance=0):
+        """Set up the account with an owner name and starting balance."""
+        self.owner = owner
+        self.balance = initial_balance
+        self.transactions = []
+   
+    def deposit(self, amount):
+        """Add money to the account."""
+        if amount > 0:
+            self.balance += amount
+            self.transactions.append(f"Deposit: +£{amount:.2f}")
+            print(f"Deposited £{amount:.2f}. New balance: £{self.balance:.2f}")
+        else:
+            print("Deposit amount must be positive.")
+   
+    def withdraw(self, amount):
+        """Remove money from the account if funds are available."""
+        if amount <= 0:
+            print("Withdrawal amount must be positive.")
+        elif amount > self.balance:
+            print(f"Insufficient funds. Balance is only £{self.balance:.2f}")
+        else:
+            self.balance -= amount
+            self.transactions.append(f"Withdrawal: -£{amount:.2f}")
+            print(f"Withdrew £{amount:.2f}. New balance: £{self.balance:.2f}")
+   
+    def show_balance(self):
+        """Display the current balance."""
+        print(f"\nAccount holder: {self.owner}")
+        print(f"Current balance: £{self.balance:.2f}")
+       
+    def GetBalance(self):
+        return self.balance
+   
+    def show_history(self):
+        """Display all transactions."""
+        print(f"\n=== Transaction History for {self.owner} ===")
+        for t in self.transactions:
+            print(f"  {t}")
+        print(f"  Current balance: £{self.balance:.2f}")
+
+#I noticed you have written def instead of class      
+class SavingsAccount(BankAccount):
+    # we need to add a constructor so the rate can be added
+    def __init__(self, owner, initial_balance=0, rate =0.0):
+        super().__init__(owner, initial_balance) # calls the contructor of the parent class i.e. BankAccount
+        #set the rate
+        self.rate = rate
+   
+    def apply_interest(self):
+        interest = self.balance * self.rate
+        self.balance = self.balance + interest
+        self.transactions.append(f"Interest ({self.rate:.1%}): +£{interest:.2f}")
+        print(f"Interest applied: +£{interest:.2f}. New balance: £{self.balance:.2f}")
+       
+#added a little helper to ensure that user enters a number before proceeding
+def validateInput(prompt):
+    '''Keep asking until the user enters a valid number.'''
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Please enter a floating point number")
+
+# --- Using the class ---
+def main():
+    name = input("Enter account holder name: ")
+    opening = validateInput("Enter opening balance: £")
+    rate = validateInput('Enter annual Interest rate (e.g. 0.03 for 3%): ')
+   
+    #We create one object - a saving account is a type of bank account
+    account = SavingsAccount(name, opening, rate)
+   
+    while True:
+        print("\n1. Deposit")
+        print("2. Withdraw")
+        print("3. Check balance")
+        print("4. View history")
+        print("5. Apply Interest")
+        print("6. Exit")
+       
+        choice = input("Choose: ")
+       
+        if choice == "1":
+            amount = float(input("Amount to deposit: £"))
+            account.deposit(amount)
+        elif choice == "2":
+            amount = float(input("Amount to withdraw: £"))
+            account.withdraw(amount)
+        elif choice == "3":
+            account.show_balance()
+        elif choice == "4":
+            account.show_history()
+        elif choice =="5":
+            account.apply_interest()
+        elif choice == "6":
+            print("Thank you for banking with us.")
+            break
+        else:
+            print("Invalid choice.  Please pick 1-6")
+'''
+
+#Project 6
+
+## Contact Book with File Saving
+
+**Description**
+
+This code asks the user to inp
+
+'''python
+import os
+
+FILENAME = "contacts.txt"
+
+def load_contacts():
+    """Load contacts from file. Return empty list if file doesn't exist."""
+    contacts = []
+    if os.path.exists(FILENAME):
+        with open(FILENAME, "r") as f:
+            for line in f:
+                parts = line.strip().split(",")
+                if len(parts) == 2:
+                    contacts.append({"name": parts[0], "phone": parts[1]})
+    return contacts
+
+def save_contacts(contacts):
+    """Save all contacts to file."""
+    with open(FILENAME, "w") as f:
+        for c in contacts:
+            f.write(f"{c['name']},{c['phone']}\n")
+    print("Contacts saved.")
+
+def add_contact(contacts):
+    name = input("Name: ")
+    phone = input("Phone: ")
+    contacts.append({"name": name, "phone": phone})
+    save_contacts(contacts)
+    
+    def view_contacts(contacts):
+        if not contacts:
+            print("No contacts saved.")
+            return
+        print("\n=== Contacts ===")
+        for i, c in enumerate(contacts, 1):
+            print(f"{i}. {c['name']} — {c['phone']}")
+
+    def main():
+        contacts = load_contacts()
+        print(f"Loaded {len(contacts)} contact(s).")
+        
+        while True:
+            print("\n1. View contacts  2. Add contact  3. Exit")
+            choice = input("Choose: ")
+            if choice == "1":
+                view_contacts(contacts)
+            elif choice == "2":
+                add_contact(contacts)
+            elif choice == "3":
+                break
+
+    main()
+'''
