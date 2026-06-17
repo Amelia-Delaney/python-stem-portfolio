@@ -415,13 +415,10 @@ This code asks the user to inp
         for t in self.transactions:
             print(f"  {t}")
         print(f"  Current balance: £{self.balance:.2f}")
-
-#I noticed you have written def instead of class      
+      
 class SavingsAccount(BankAccount):
-    # we need to add a constructor so the rate can be added
     def __init__(self, owner, initial_balance=0, rate =0.0):
-        super().__init__(owner, initial_balance) # calls the contructor of the parent class i.e. BankAccount
-        #set the rate
+        super().__init__(owner, initial_balance) 
         self.rate = rate
    
     def apply_interest(self):
@@ -430,7 +427,6 @@ class SavingsAccount(BankAccount):
         self.transactions.append(f"Interest ({self.rate:.1%}): +£{interest:.2f}")
         print(f"Interest applied: +£{interest:.2f}. New balance: £{self.balance:.2f}")
        
-#added a little helper to ensure that user enters a number before proceeding
 def validateInput(prompt):
     '''Keep asking until the user enters a valid number.'''
     while True:
@@ -439,13 +435,11 @@ def validateInput(prompt):
         except ValueError:
             print("Please enter a floating point number")
 
-# --- Using the class ---
 def main():
     name = input("Enter account holder name: ")
     opening = validateInput("Enter opening balance: £")
     rate = validateInput('Enter annual Interest rate (e.g. 0.03 for 3%): ')
    
-    #We create one object - a saving account is a type of bank account
     account = SavingsAccount(name, opening, rate)
    
     while True:
