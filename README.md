@@ -368,7 +368,7 @@ calculate_results()
 
 **Description**
 
-This code asks the user to inp
+This code asks the user to input their name in order to open a bank account. They are then asked to enter an opening balance alongside an annual interest rate.
 
 **Code**
 ```python
