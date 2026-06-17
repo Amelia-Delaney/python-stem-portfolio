@@ -514,7 +514,7 @@ def add_contact(contacts):
     contacts.append({"name": name, "phone": phone})
     save_contacts(contacts)
     
-    def view_contacts(contacts):
+def view_contacts(contacts):
         if not contacts:
             print("No contacts saved.")
             return
@@ -522,7 +522,7 @@ def add_contact(contacts):
         for i, c in enumerate(contacts, 1):
             print(f"{i}. {c['name']} — {c['phone']}")
 
-    def main():
+def main():
         contacts = load_contacts()
         print(f"Loaded {len(contacts)} contact(s).")
         
@@ -536,5 +536,5 @@ def add_contact(contacts):
             elif choice == "3":
                 break
 
-    main()
+main()
 ```
