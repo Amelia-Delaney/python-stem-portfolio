@@ -215,7 +215,7 @@ def main():
 main()
 ```
 
-#Project 3
+# Project 3
 
 ## To Do List
 
@@ -299,7 +299,7 @@ def main():
 main()
 ```
 
-#Project 4
+# Project 4
 
 ## Student Grade Calculator
 
@@ -362,7 +362,7 @@ while True:
 calculate_results()
 ```
 
-#Project 5
+# Project 5
 
 ## OOP Bank Account
 
@@ -371,8 +371,9 @@ calculate_results()
 This code asks the user to inp
 
 **Code**
-'''python
-      """A simple bank account class."""
+```python
+    class BankAccount:
+    """A simple bank account class."""
 
     def __init__(self, owner, initial_balance=0):
         """Set up the account with an owner name and starting balance."""
@@ -474,9 +475,9 @@ def main():
             break
         else:
             print("Invalid choice.  Please pick 1-6")
-'''
+```
 
-#Project 6
+# Project 6
 
 ## Contact Book with File Saving
 
@@ -484,7 +485,7 @@ def main():
 
 This code asks the user to inp
 
-'''python
+```python
 import os
 
 FILENAME = "contacts.txt"
@@ -536,4 +537,4 @@ def add_contact(contacts):
                 break
 
     main()
-'''
+```
